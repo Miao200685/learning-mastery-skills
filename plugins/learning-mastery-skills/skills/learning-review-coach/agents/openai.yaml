@@ -1,0 +1,7 @@
+interface:
+  display_name: "Learning Review Coach"
+  short_description: "用主动回忆、错因诊断和间隔复习守住长期掌握"
+  brand_color: "#7A4DB3"
+  default_prompt: "Use $learning-review-coach to run today's due reviews and repair weak recall."
+policy:
+  allow_implicit_invocation: true

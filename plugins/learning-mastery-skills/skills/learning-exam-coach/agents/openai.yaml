@@ -1,0 +1,7 @@
+interface:
+  display_name: "Learning Exam Coach"
+  short_description: "用材料溯源、限时模拟和错因分类提升考试表现"
+  brand_color: "#B4233B"
+  default_prompt: "Use $learning-exam-coach to build and score a source-grounded mock exam for my target."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,398 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-22",
+  "disclaimer": "Star 数与仓库元数据会变化，仅作为发现信号。许可证状态必须在使用或复制前重新核验；本目录只提供链接与评估，不构成再分发授权。",
+  "tiers": {
+    "direct": "可直接使用",
+    "specialized": "专项参考",
+    "index": "仅索引"
+  },
+  "entries": [
+    {
+      "id": "universal-examprep-skill",
+      "name": "Exam Cram Coach / universal-examprep-skill",
+      "repo": "ZeKaiNie/universal-examprep-skill",
+      "url": "https://github.com/ZeKaiNie/universal-examprep-skill",
+      "license": "MIT",
+      "stars": 290,
+      "created_at": "2026-06-24",
+      "last_pushed": "2026-09-18",
+      "tier": "direct",
+      "codex_compatibility": "适配",
+      "best_for": "期末复习、考前突击、讲义引用、刷题与错题复盘",
+      "scores": {
+        "learning_science": 4,
+        "active_learning": 5,
+        "retention": 4,
+        "exam_fit": 5,
+        "traceability": 5,
+        "persistence": 5,
+        "testing": 5,
+        "license_clarity": 5,
+        "maintenance": 5
+      },
+      "strengths": [
+        "包含 14 个 SKILL.md 和完整考试工作流",
+        "仓库结构显示大量测试与评测资产",
+        "强调讲义页码引用、图形裁剪和防幻觉"
+      ],
+      "risks": [
+        "功能复杂，首次配置成本高于单一技能",
+        "自动评分仍需人工抽检主观题"
+      ],
+      "recommended_use": "独立安装作为考试冲刺参考；本仓库只链接，不复制其内容。",
+      "evidence": "GitHub API 元数据、仓库树、README 与测试文件共同核实。"
+    },
+    {
+      "id": "education-agent-skills",
+      "name": "Education Agent Skills Library",
+      "repo": "GarethManning/education-agent-skills",
+      "url": "https://github.com/GarethManning/education-agent-skills",
+      "license": "CC BY-SA 4.0",
+      "stars": 794,
+      "created_at": "2026-03-01",
+      "last_pushed": "2026-08-28",
+      "tier": "direct",
+      "codex_compatibility": "适配",
+      "best_for": "学习科学、教学法、评估设计、学生元认知与自我调节",
+      "scores": {
+        "learning_science": 5,
+        "active_learning": 5,
+        "retention": 5,
+        "exam_fit": 4,
+        "traceability": 5,
+        "persistence": 4,
+        "testing": 5,
+        "license_clarity": 4,
+        "maintenance": 4
+      },
+      "strengths": [
+        "165 个结构化技能，覆盖记忆、检索练习、交错练习和反馈",
+        "包含面向学生、教师和课程设计的明确分区",
+        "提供 Codex 插件、测试与审计文档"
+      ],
+      "risks": [
+        "CC BY-SA 4.0 带来署名与相同方式共享义务",
+        "面向教育者设计的部分技能不适合直接当作个人学习总控"
+      ],
+      "recommended_use": "作为学习科学原语参考；按单技能安装，不在 MIT 主仓库中复制内容。",
+      "evidence": "README、registry、仓库树与测试/审计文件核实。"
+    },
+    {
+      "id": "book-to-skill",
+      "name": "Book to Skill",
+      "repo": "virgiliojr94/book-to-skill",
+      "url": "https://github.com/virgiliojr94/book-to-skill",
+      "license": "MIT",
+      "stars": 31873,
+      "created_at": "2026-05-01",
+      "last_pushed": "2026-09-18",
+      "tier": "direct",
+      "codex_compatibility": "部分适配，需核验 Claude 专属调用",
+      "best_for": "把技术书 PDF 转为可查询、可复习的技能式知识库",
+      "scores": {
+        "learning_science": 4,
+        "active_learning": 4,
+        "retention": 4,
+        "exam_fit": 3,
+        "traceability": 4,
+        "persistence": 5,
+        "testing": 4,
+        "license_clarity": 5,
+        "maintenance": 5
+      },
+      "strengths": [
+        "高关注度且持续维护",
+        "提供文档、脚本、测试、评测和多语言说明",
+        "非常适合资料到课程的转化"
+      ],
+      "risks": [
+        "核心定位偏技术书与 Claude Code",
+        "扫描版 PDF 的处理质量取决于文本层"
+      ],
+      "recommended_use": "作为资料转化专项技能单独安装；本仓库借鉴的是接口设计而非复制实现。",
+      "evidence": "GitHub API 元数据、仓库树与 README 核实。"
+    },
+    {
+      "id": "tutor-skills",
+      "name": "Tutor Skills",
+      "repo": "bevibing/tutor-skills",
+      "url": "https://github.com/bevibing/tutor-skills",
+      "license": "MIT",
+      "stars": 1163,
+      "created_at": "2026-02-22",
+      "last_pushed": "2026-02-28",
+      "tier": "direct",
+      "codex_compatibility": "部分适配，需核验 Claude 专属调用",
+      "best_for": "PDF、文档或代码库转为 Obsidian 学习库与测验",
+      "scores": {
+        "learning_science": 4,
+        "active_learning": 5,
+        "retention": 4,
+        "exam_fit": 3,
+        "traceability": 4,
+        "persistence": 5,
+        "testing": 3,
+        "license_clarity": 5,
+        "maintenance": 2
+      },
+      "strengths": [
+        "tutor 与 tutor-setup 职责清晰",
+        "包含模板、安装脚本、测验规则和质量清单",
+        "对 Obsidian 学习工作流有直接价值"
+      ],
+      "risks": [
+        "最近更新时间较早且未见系统性测试目录",
+        "默认依赖 Obsidian 工作流"
+      ],
+      "recommended_use": "作为 Obsidian 学习库方向的专项参考。",
+      "evidence": "GitHub API 元数据、仓库树与 README 核实。"
+    },
+    {
+      "id": "study-skill",
+      "name": "Interactive Study Skill",
+      "repo": "mordor-forge/study-skill",
+      "url": "https://github.com/mordor-forge/study-skill",
+      "license": "未确认（API 未返回许可证）",
+      "stars": 39,
+      "created_at": "2026-04-04",
+      "last_pushed": "2026-07-17",
+      "tier": "specialized",
+      "codex_compatibility": "未验证",
+      "best_for": "FSRS-6 间隔复习、书籍目录、ADHD 友好学习会话",
+      "scores": {
+        "learning_science": 4,
+        "active_learning": 4,
+        "retention": 5,
+        "exam_fit": 3,
+        "traceability": 3,
+        "persistence": 4,
+        "testing": 4,
+        "license_clarity": 0,
+        "maintenance": 3
+      },
+      "strengths": [
+        "明确采用 FSRS-6 与持久化书籍目录",
+        "包含多个脚本测试",
+        "对复习和会话设计有专项参考价值"
+      ],
+      "risks": [
+        "许可证未确认，禁止复制",
+        "存在未解决 issue，需安装前复核",
+        "Claude Code 专属程度尚未验证"
+      ],
+      "recommended_use": "仅作算法和产品设计参考，不安装为关键依赖。",
+      "evidence": "GitHub API 元数据、README 与脚本测试目录核实。"
+    },
+    {
+      "id": "anything-to-course",
+      "name": "Anything to Course",
+      "repo": "lowwwbank/anything-to-course",
+      "url": "https://github.com/lowwwbank/anything-to-course",
+      "license": "MIT",
+      "stars": 15,
+      "created_at": "2026-07-03",
+      "last_pushed": "2026-07-07",
+      "tier": "specialized",
+      "codex_compatibility": "可能适配（标准 SKILL.md）",
+      "best_for": "把任意材料转为检索练习、间隔复习和导师模式的微型课程",
+      "scores": {
+        "learning_science": 4,
+        "active_learning": 4,
+        "retention": 4,
+        "exam_fit": 2,
+        "traceability": 3,
+        "persistence": 3,
+        "testing": 1,
+        "license_clarity": 5,
+        "maintenance": 2
+      },
+      "strengths": [
+        "工作流聚焦并且许可证清晰",
+        "明确包含 retrieval practice 与 tutor mode"
+      ],
+      "risks": [
+        "仓库较新且没有测试目录",
+        "维护时间较短，稳定性未经验证"
+      ],
+      "recommended_use": "作为课程生成 prompt 结构参考，不建议作为唯一学习系统。",
+      "evidence": "GitHub API 元数据、README、SKILL.md 路径和文件总数核实。"
+    },
+    {
+      "id": "antivibe",
+      "name": "AntiVibe",
+      "repo": "mohi-devhub/antivibe",
+      "url": "https://github.com/mohi-devhub/antivibe",
+      "license": "MIT",
+      "stars": 1110,
+      "created_at": "2026-04-10",
+      "last_pushed": "2026-07-31",
+      "tier": "specialized",
+      "codex_compatibility": "部分适配，存在 Claude 专属 hooks/agents",
+      "best_for": "从代码库进行深度学习、架构审查和概念迁移",
+      "scores": {
+        "learning_science": 4,
+        "active_learning": 4,
+        "retention": 2,
+        "exam_fit": 2,
+        "traceability": 4,
+        "persistence": 3,
+        "testing": 2,
+        "license_clarity": 5,
+        "maintenance": 3
+      },
+      "strengths": [
+        "专注于理解代码中的 why、when 和 alternatives",
+        "支持不同深度与输出模式",
+        "适合编程技能而非纯考试记忆"
+      ],
+      "risks": [
+        "面向代码，不覆盖通用学科",
+        "Claude hooks/agents 在 Codex 中需要改写"
+      ],
+      "recommended_use": "技能学习分支的专项参考，不进入通用主流程。",
+      "evidence": "GitHub API 元数据、README、SKILL.md 和仓库树核实。"
+    },
+    {
+      "id": "loom-notes",
+      "name": "Loom Notes",
+      "repo": "Polaris-Aeterna/loom-notes",
+      "url": "https://github.com/Polaris-Aeterna/loom-notes",
+      "license": "未确认（NOASSERTION）",
+      "stars": 155,
+      "created_at": "2026-06-27",
+      "last_pushed": "2026-06-29",
+      "tier": "specialized",
+      "codex_compatibility": "未验证",
+      "best_for": "填空式主动回忆笔记与 XeLaTeX 学习材料",
+      "scores": {
+        "learning_science": 4,
+        "active_learning": 5,
+        "retention": 3,
+        "exam_fit": 3,
+        "traceability": 3,
+        "persistence": 4,
+        "testing": 1,
+        "license_clarity": 0,
+        "maintenance": 2
+      },
+      "strengths": [
+        "把 active recall 直接编码到学习笔记中",
+        "视觉与排版完成度高",
+        "适合把讲义转为可练习材料"
+      ],
+      "risks": [
+        "许可证未明确，禁止复制",
+        "未见自动化测试，维护窗口短"
+      ],
+      "recommended_use": "仅作主动回忆笔记设计参考。",
+      "evidence": "GitHub API 元数据、仓库树和 LICENSE 元数据状态核实。"
+    },
+    {
+      "id": "learning-opportunities",
+      "name": "Learning Opportunities",
+      "repo": "DrCatHicks/learning-opportunities",
+      "url": "https://github.com/DrCatHicks/learning-opportunities",
+      "license": "仓库含 LICENSE；类型待复核",
+      "stars": 2454,
+      "created_at": null,
+      "last_pushed": null,
+      "tier": "specialized",
+      "codex_compatibility": "明确支持 Codex 与 Claude",
+      "best_for": "在 AI 辅助工作中安排刻意技能练习与代码库导览",
+      "scores": {
+        "learning_science": 4,
+        "active_learning": 5,
+        "retention": 3,
+        "exam_fit": 2,
+        "traceability": 3,
+        "persistence": 3,
+        "testing": 3,
+        "license_clarity": 3,
+        "maintenance": 3
+      },
+      "strengths": [
+        "明确支持 Codex",
+        "把学习机会嵌入真实任务而非脱离情境",
+        "提供 orient 与 learning-opportunities 两个技能"
+      ],
+      "risks": [
+        "主要服务开发技能，不覆盖学科考试",
+        "许可证类型与元数据需要人工复核"
+      ],
+      "recommended_use": "技能学习和工作内训练方向的专项参考。",
+      "evidence": "搜索结果、README、仓库树和 LICENSE 文件存在性核实。"
+    },
+    {
+      "id": "awesome-claude-skills",
+      "name": "Awesome Claude Skills",
+      "repo": "ComposioHQ/awesome-claude-skills",
+      "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+      "license": "Apache-2.0（README 徽章；API 元数据缺失）",
+      "stars": 75462,
+      "created_at": "2025-10-17",
+      "last_pushed": "2026-09-18",
+      "tier": "index",
+      "codex_compatibility": "索引包含多种 Agent Skills",
+      "best_for": "发现技能、模板、插件和工具",
+      "scores": {
+        "learning_science": 2,
+        "active_learning": 2,
+        "retention": 2,
+        "exam_fit": 2,
+        "traceability": 2,
+        "persistence": 2,
+        "testing": 3,
+        "license_clarity": 3,
+        "maintenance": 5
+      },
+      "strengths": [
+        "规模大且更新频繁",
+        "包含大量 SKILL.md 和插件示例",
+        "适合发现专项工具"
+      ],
+      "risks": [
+        "不是学习质量排名，star 数不代表教育效果",
+        "条目众多，包含大量自动化而非学习技能"
+      ],
+      "recommended_use": "只用于发现候选项目，不直接安装整个集合。",
+      "evidence": "GitHub API 元数据、README、仓库树与 SKILL.md 数量核实。"
+    },
+    {
+      "id": "awesome-agent-skills",
+      "name": "Awesome Agent Skills",
+      "repo": "VoltAgent/awesome-agent-skills",
+      "url": "https://github.com/VoltAgent/awesome-agent-skills",
+      "license": "仓库含 LICENSE；类型待复核",
+      "stars": 34703,
+      "created_at": null,
+      "last_pushed": null,
+      "tier": "index",
+      "codex_compatibility": "覆盖 Claude Code、Codex、Gemini CLI、Cursor 等",
+      "best_for": "跨 Agent 技能发现与官方团队技能索引",
+      "scores": {
+        "learning_science": 2,
+        "active_learning": 2,
+        "retention": 2,
+        "exam_fit": 2,
+        "traceability": 2,
+        "persistence": 1,
+        "testing": 2,
+        "license_clarity": 2,
+        "maintenance": 5
+      },
+      "strengths": [
+        "覆盖多平台与官方团队技能",
+        "社区更新活跃",
+        "适合发现 Codex 兼容候选"
+      ],
+      "risks": [
+        "本身是索引而非实现",
+        "收录标准与许可证状态需逐项核验",
+        "元数据在本次核验时受 GitHub 匿名限流影响"
+      ],
+      "recommended_use": "作为二手发现源，最终必须回到上游仓库审计。",
+      "evidence": "搜索结果、README 与仓库树存在性核实；部分元数据待复核。"
+    }
+  ]
+}

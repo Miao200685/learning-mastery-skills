@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-22T06:22:45.520Z",
+  "updated_at": "2026-09-22T06:22:45.520Z",
+  "name": "示例：线性代数期末",
+  "subject": "线性代数",
+  "goal": "理解核心概念并以 90 分以上通过考试",
+  "exam_date": "2027-01-15",
+  "target_score": 90,
+  "available_minutes_per_day": 60,
+  "language": "zh-CN",
+  "timezone": "Asia/Shanghai",
+  "mode": "auto",
+  "source_policy": "materials_only",
+  "mastery_weights": {
+    "recall": 30,
+    "independent_application": 30,
+    "retention": 20,
+    "transfer": 20
+  }
+}

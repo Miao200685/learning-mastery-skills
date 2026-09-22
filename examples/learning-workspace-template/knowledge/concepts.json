@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "concepts": [
+    {
+      "id": "eigenvector-definition",
+      "title": "特征值与特征向量定义",
+      "learning_objective": "能判断给定向量是否为特征向量并解释条件",
+      "type": "concept",
+      "prerequisites": [],
+      "source_refs": [
+        "src-0cb39e4f97ad"
+      ],
+      "exam_weight": 5,
+      "inferred": false
+    }
+  ]
+}

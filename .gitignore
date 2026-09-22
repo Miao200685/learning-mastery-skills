@@ -1,0 +1,20 @@
+# Personal learning workspaces
+learning-workspace/
+learning-workspaces/
+*.learning-workspace/
+
+# Temporary development and validation artifacts
+.tmp-*
+tmp/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+node_modules/
+coverage/
+.DS_Store
+Thumbs.db
+
+# Local Codex planning files
+task_plan.md
+notes.md

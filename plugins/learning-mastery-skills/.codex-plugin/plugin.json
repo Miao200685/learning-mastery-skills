@@ -1,0 +1,29 @@
+{
+  "name": "learning-mastery-skills",
+  "version": "0.1.0",
+  "description": "Source-grounded learning, memory, and exam-preparation skills for Codex.",
+  "author": {
+    "name": "Learning Mastery Skills contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "learning",
+    "study",
+    "exam-preparation",
+    "spaced-repetition",
+    "active-recall"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Learning Mastery Skills",
+    "shortDescription": "学习、掌握与高分备考的持久工作流",
+    "longDescription": "将 PDF、课件、文档和学习笔记转成带来源引用的概念图，通过主动回忆、间隔复习、错题诊断和限时模拟考试持续提升掌握度与考试表现。",
+    "developerName": "Learning Mastery Skills contributors",
+    "category": "Education",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": "使用 $learning-mastery 初始化我的学习项目，并告诉我下一步最值得做什么。"
+  }
+}

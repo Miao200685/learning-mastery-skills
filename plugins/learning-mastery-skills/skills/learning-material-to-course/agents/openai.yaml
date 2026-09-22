@@ -1,0 +1,7 @@
+interface:
+  display_name: "Material to Course"
+  short_description: "把资料转为带引用、先修关系和诊断的课程"
+  brand_color: "#0F8A72"
+  default_prompt: "Use $learning-material-to-course to turn my files into an evidence-linked course and concept map."
+policy:
+  allow_implicit_invocation: true

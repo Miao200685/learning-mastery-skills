@@ -1,0 +1,1 @@
+{"id":"q-eigen-definition","concept_ids":["eigenvector-definition"],"provenance":"source_exact","source_refs":["src-0cb39e4f97ad"],"locator":"section:特征值与特征向量","prompt":"若 A v = lambda v，v 必须满足什么条件？","answer":"v 必须是非零向量，lambda 是对应特征值。","difficulty":1}

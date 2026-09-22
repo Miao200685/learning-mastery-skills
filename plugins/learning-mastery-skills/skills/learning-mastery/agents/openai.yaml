@@ -1,0 +1,7 @@
+interface:
+  display_name: "Learning Mastery"
+  short_description: "建立可持续的学习与高分备考工作区"
+  brand_color: "#2F6FED"
+  default_prompt: "Use $learning-mastery to initialize my learning project and choose the best next step."
+policy:
+  allow_implicit_invocation: true

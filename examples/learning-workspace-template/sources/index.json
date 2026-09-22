@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "src-0cb39e4f97ad",
+      "title": "sample-lecture.md",
+      "path": "sample-lecture.md",
+      "type": "md",
+      "sha256": "0cb39e4f97adc27efb92518a6feae75d5e2904e4b63c3175268be1ae84d92a16",
+      "size_bytes": 216,
+      "locator_scheme": "section",
+      "extraction": {
+        "status": "pending",
+        "extracted_path": null,
+        "confidence": null
+      },
+      "provenance_note": null,
+      "added_at": "2026-09-22T06:22:45.777Z",
+      "updated_at": "2026-09-22T06:22:45.777Z"
+    }
+  ]
+}

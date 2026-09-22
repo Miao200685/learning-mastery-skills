@@ -1,0 +1,7 @@
+interface:
+  display_name: "Learning Tutor"
+  short_description: "用诊断、渐隐提示和迁移练习真正讲懂"
+  brand_color: "#C65D2E"
+  default_prompt: "Use $learning-tutor to diagnose my understanding and guide me with progressive hints."
+policy:
+  allow_implicit_invocation: true
