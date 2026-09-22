@@ -13,7 +13,7 @@ A Codex plugin for source-grounded mastery and high-stakes exam preparation. It 
 ## Install
 
 ```bash
-codex plugin marketplace add <owner>/learning-mastery-skills --ref main
+codex plugin marketplace add Miao200685/learning-mastery-skills --ref main
 codex plugin add learning-mastery-skills@learning-mastery
 ```
 
@@ -26,3 +26,4 @@ Use $learning-mastery to create a project for linear algebra, exam on 2027-01-15
 The core tools use only the Node.js standard library. Learning data stays outside the public repository. See [docs/CATALOG.md](docs/CATALOG.md) for the audited external project catalog and [docs/PRIVACY.md](docs/PRIVACY.md) for data boundaries.
 
 Licensed under MIT. External projects retain their own licenses.
+

@@ -28,14 +28,14 @@
 从 GitHub 安装：
 
 ```bash
-codex plugin marketplace add <owner>/learning-mastery-skills --ref main
+codex plugin marketplace add Miao200685/learning-mastery-skills --ref main
 codex plugin add learning-mastery-skills@learning-mastery
 ```
 
 从本地克隆安装：
 
 ```bash
-git clone https://github.com/<owner>/learning-mastery-skills.git
+git clone https://github.com/Miao200685/learning-mastery-skills.git
 cd learning-mastery-skills
 codex plugin marketplace add .
 codex plugin add learning-mastery-skills@learning-mastery
@@ -95,3 +95,4 @@ node scripts/workspace.mjs validate examples/learning-workspace-template
 ## License
 
 原创代码与文档采用 [MIT License](LICENSE)。外部项目保留各自许可证，本项目只链接和评估，除非明确注明，不复制其内容。
+

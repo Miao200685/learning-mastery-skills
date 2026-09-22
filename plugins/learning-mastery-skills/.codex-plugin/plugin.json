@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Source-grounded learning, memory, and exam-preparation skills for Codex.",
   "author": {
-    "name": "Learning Mastery Skills contributors"
+    "name": "Miao200685",
+    "url": "https://github.com/Miao200685",
+    "email": "Miao200685@users.noreply.github.com"
   },
   "license": "MIT",
   "keywords": [
@@ -25,5 +27,7 @@
       "Write"
     ],
     "defaultPrompt": "使用 $learning-mastery 初始化我的学习项目，并告诉我下一步最值得做什么。"
-  }
+  },
+  "homepage": "https://github.com/Miao200685/learning-mastery-skills",
+  "repository": "https://github.com/Miao200685/learning-mastery-skills"
 }

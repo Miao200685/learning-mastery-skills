@@ -11,7 +11,7 @@
 ## 从 GitHub 安装
 
 ```bash
-codex plugin marketplace add <owner>/learning-mastery-skills --ref main
+codex plugin marketplace add Miao200685/learning-mastery-skills --ref main
 codex plugin add learning-mastery-skills@learning-mastery
 ```
 
@@ -20,7 +20,7 @@ codex plugin add learning-mastery-skills@learning-mastery
 ## 从本地目录安装
 
 ```bash
-git clone https://github.com/<owner>/learning-mastery-skills.git
+git clone https://github.com/Miao200685/learning-mastery-skills.git
 cd learning-mastery-skills
 codex plugin marketplace add .
 codex plugin add learning-mastery-skills@learning-mastery
@@ -72,3 +72,4 @@ codex plugin marketplace remove learning-mastery
 - 工作区验证失败：先读取错误，不覆盖状态文件；修复来源引用、概念 ID 或题目 provenance。
 - 扫描材料读不清：保留原页图片定位，标记 `needs_review`，不要编造缺失文字。
 - 远程安装失败：确认仓库为公共仓库，并检查 `--ref main` 和 marketplace 名称 `learning-mastery`。
+
