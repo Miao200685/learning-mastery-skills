@@ -13,6 +13,7 @@ test('仓库插件、技能和 marketplace 自检通过', async () => {
     'learning-exam-coach',
     'learning-mastery',
     'learning-material-to-course',
+    'learning-momentum',
     'learning-review-coach',
     'learning-tutor',
   ]);

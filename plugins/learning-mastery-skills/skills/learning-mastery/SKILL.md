@@ -1,6 +1,6 @@
 ---
 name: learning-mastery
-description: "Use when the user wants a persistent learning workspace, a structured plan to master a subject or skill, or source-grounded exam preparation. Initializes and routes the learning workflow across material analysis, tutoring, review, and mock exams."
+description: "Use when the user wants a persistent learning workspace, a structured plan to master a subject or skill, or source-grounded exam preparation. Initializes and routes the learning workflow across material analysis, tutoring, Feynman cycles, momentum support, review, and mock exams."
 ---
 
 # Learning Mastery
@@ -25,6 +25,7 @@ Use a concise clarifying question only for information that cannot be inferred a
 | Import PDFs, slides, notes, web pages, or images | `$learning-material-to-course` |
 | Explain, teach, debug understanding, practice with hints | `$learning-tutor` |
 | Review due concepts or build long-term retention | `$learning-review-coach` |
+| Low motivation, inconsistency, return after a break, or sustainable rhythm | `$learning-momentum` |
 | Take a quiz, simulate an exam, score an attempt | `$learning-exam-coach` |
 | Plan, status, mode change, or uncertain request | Handle here and delegate when needed |
 
@@ -34,6 +35,8 @@ Use a concise clarifying question only for information that cannot be inferred a
 - `balanced`: 8-30 days remain. Use 60% mastery / 40% exam work.
 - `exam`: 7 days or fewer remain. Use 20% mastery / 80% exam work.
 - Explicit user mode overrides automatic mode. Repeated critical errors override the weighting and must be repaired before new breadth.
+- Exam mode is a temporary sprint overlay, not the default learning identity. After the deadline, return to sustainable mastery and reduce load.
+- Protect return rate: a small comeback session is better than abandoning the plan.
 - For pure skill acquisition, replace exam tasks with authentic performance, project, or transfer tasks.
 
 ## Evidence Gate
@@ -48,7 +51,8 @@ Use a concise clarifying question only for information that cannot be inferred a
 
 - Keep human-readable plans in Markdown and state in JSON/JSONL.
 - Store enough evidence to resume after a new session: concept IDs, source locators, attempts, mistakes, review dates, and mastery components.
-- Update `progress/dashboard.md` after meaningful progress.
+- Update `progress/dashboard.md` after meaningful progress. Lead with abilities and next actions; keep scores secondary.
+- Store Feynman cycles in `knowledge/feynman.json` when used.
 - Never edit the shared plugin repository to store an individual learner's progress.
 - Read [references/workspace-contract.md](references/workspace-contract.md) before writing structured state.
 - Read [references/mode-routing.md](references/mode-routing.md) when planning a week or resolving competing priorities.

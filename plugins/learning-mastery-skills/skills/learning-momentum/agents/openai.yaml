@@ -1,0 +1,7 @@
+interface:
+  display_name: "Learning Momentum"
+  short_description: "保持好奇、低压力重启并建立可持续学习节奏"
+  brand_color: "#D97706"
+  default_prompt: "Use $learning-momentum to choose a sustainable session and help me restart without guilt."
+policy:
+  allow_implicit_invocation: true

@@ -1,7 +1,7 @@
 {
   "name": "learning-mastery-skills",
-  "version": "0.1.0",
-  "description": "Source-grounded learning, memory, and exam-preparation skills for Codex.",
+  "version": "0.2.0",
+  "description": "Source-grounded, sustainable learning skills for mastery, Feynman-style explanation, memory, motivation, and exam preparation.",
   "author": {
     "name": "Miao200685",
     "url": "https://github.com/Miao200685",
@@ -11,15 +11,17 @@
   "keywords": [
     "learning",
     "study",
-    "exam-preparation",
+    "feynman-technique",
+    "sustainability",
     "spaced-repetition",
-    "active-recall"
+    "active-recall",
+    "exam-preparation"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Learning Mastery Skills",
-    "shortDescription": "学习、掌握与高分备考的持久工作流",
-    "longDescription": "将 PDF、课件、文档和学习笔记转成带来源引用的概念图，通过主动回忆、间隔复习、错题诊断和限时模拟考试持续提升掌握度与考试表现。",
+    "shortDescription": "可持续掌握、费曼循环与高分备考工作流",
+    "longDescription": "把学习材料转成带来源引用的概念图，通过完整费曼循环、主动回忆、间隔复习、学习动能、错因诊断和限时模拟考试，建立可长期坚持且能在截止日期前冲刺的学习系统。",
     "developerName": "Learning Mastery Skills contributors",
     "category": "Education",
     "capabilities": [

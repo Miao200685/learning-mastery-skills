@@ -37,13 +37,14 @@ codex plugin add learning-mastery-skills@learning-mastery
 材料：只使用我提供的教材、课件和历年题
 ```
 
-随后把材料路径交给 `$learning-material-to-course`。工作区默认保存在项目中，不写入插件安装目录。
+随后把材料路径交给 `$learning-material-to-course`。工作区默认保存在项目中，不写入插件安装目录。`$learning-momentum` 负责低压力重启和可持续节奏；`$learning-tutor` 会执行完整费曼循环。
 
 ## 常用请求
 
 ```text
 使用 $learning-material-to-course 导入 materials/ 下的所有资料并建立概念图。
-使用 $learning-tutor 从诊断开始教我“消费者剩余”。
+使用 $learning-tutor 从诊断开始教我“消费者剩余”，完成后运行完整费曼循环。
+使用 $learning-momentum 我今天只有 10 分钟，帮我做一次恢复模式。
 使用 $learning-review-coach 完成今天到期的复习。
 使用 $learning-exam-coach 生成一套 90 分钟模拟卷，考完后再评分。
 使用 $learning-mastery 更新仪表盘，并告诉我未来三天最值得做什么。
@@ -72,4 +73,3 @@ codex plugin marketplace remove learning-mastery
 - 工作区验证失败：先读取错误，不覆盖状态文件；修复来源引用、概念 ID 或题目 provenance。
 - 扫描材料读不清：保留原页图片定位，标记 `needs_review`，不要编造缺失文字。
 - 远程安装失败：确认仓库为公共仓库，并检查 `--ref main` 和 marketplace 名称 `learning-mastery`。
-

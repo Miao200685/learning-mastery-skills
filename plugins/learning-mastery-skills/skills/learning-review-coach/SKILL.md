@@ -10,12 +10,13 @@ Protect long-term retention and expose fragile knowledge. A review is an indepen
 ## Review Session
 
 1. Run `workspace.mjs validate`, then `review.mjs due` with today's date.
-2. Rank due items by overdue days, current mastery, exam weight, and repeated failure. Handle overdue high-risk items first.
+2. Rank due items by overdue days, current mastery, exam weight, and repeated failure. Split them into `must`, `recommended`, and `optional`; handle overdue high-risk items first instead of turning the whole queue into an obligation.
 3. For each concept, ask for recall before showing notes. No hint during the first attempt.
 4. Grade the response using the quality rubric below. Record the response with `review.mjs grade`.
 5. If quality is below 3, diagnose the failure and assign a short repair task. Re-ask a changed question the same day, but record the independent first attempt separately.
 6. If quality is 3 or higher, record what was retrieved without help and whether the answer was complete.
 7. Update the dashboard with `workspace.mjs status --write-dashboard`.
+8. If energy is low, stop after the must-do item or route to a 5-10 minute comeback session with `$learning-momentum`.
 
 ## Quality Rubric
 

@@ -101,6 +101,7 @@ export async function validateRepository(repoRoot = root) {
     'learning-exam-coach',
     'learning-mastery',
     'learning-material-to-course',
+    'learning-momentum',
     'learning-review-coach',
     'learning-tutor',
   ];

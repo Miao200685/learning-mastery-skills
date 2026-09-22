@@ -26,7 +26,7 @@ jobs:
           node-version: 24
 
       - name: Run unit and end-to-end tests
-        run: node --test tests/core.test.mjs tests/e2e.test.mjs tests/catalog.test.mjs tests/repo.test.mjs
+        run: node --test tests/core.test.mjs tests/feynman.test.mjs tests/e2e.test.mjs tests/catalog.test.mjs tests/repo.test.mjs
 
       - name: Check generated catalog
         run: node tools/render-catalog.mjs --check

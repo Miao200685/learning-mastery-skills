@@ -38,7 +38,7 @@ Connect prerequisites without cycles. Keep prerequisite edges necessary, not mer
 ## Produce the Course
 
 - Write a dependency-aware roadmap to `plan/roadmap.md`: diagnostic, foundational concepts, worked examples, independent practice, retrieval, transfer, and exam simulation.
-- Write the next actionable session to `plan/today.md` with time blocks and measurable exit criteria.
+- Write the next actionable session to `plan/today.md` with time blocks, a measurable exit criterion, and one optional curiosity question.
 - Create a short diagnostic across major concept clusters. Use source-grounded items and record confidence before revealing answers.
 - Identify high-yield nodes from exam weight, prerequisite centrality, and repeated error history. Do not equate repetition in the source with actual exam importance.
 - Keep unverified or inferred topics out of mandatory exam coverage.

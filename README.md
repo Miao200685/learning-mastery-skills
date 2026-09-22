@@ -1,6 +1,6 @@
 # Learning Mastery Skills
 
-面向 Codex 的开源学习工作流：把 PDF、课件、Word、Markdown、网页和图片转成带来源引用的课程，通过诊断、讲解、主动回忆、间隔复习、错题归因和限时模拟考试，同时追求深入掌握与高分通过考试。
+面向 Codex 的开源学习工作流：把材料转成带来源引用的课程，通过完整费曼循环、主动回忆、间隔复习、学习动能和限时模拟考试，建立可持续的长期掌握，并在考试前切换到冲刺模式。
 
 > 个人学习数据与公共技能仓库分离。仓库只包含通用技能、模板和外部项目质量目录。
 
@@ -10,7 +10,8 @@
 |---|---|
 | `$learning-mastery` | 初始化项目、选择双轨模式、维护仪表盘、自动路由 |
 | `$learning-material-to-course` | 资料导入、来源定位、概念图、先修关系、诊断与路线 |
-| `$learning-tutor` | 诊断式讲解、渐隐提示、费曼复述、独立应用与迁移 |
+| `$learning-tutor` | 诊断式讲解、渐隐提示、完整费曼循环、独立应用与迁移 |
+| `$learning-momentum` | 低压力重启、可持续节奏、兴趣与意义、恢复模式 |
 | `$learning-review-coach` | 到期复习、SM-2 变体、遗忘诊断、长期保持 |
 | `$learning-exam-coach` | 材料溯源出题、限时模拟、评分、错因与考试就绪度 |
 
@@ -18,7 +19,9 @@
 
 - **材料优先**：考点和题目必须能定位到页码、幻灯片、章节或图片区域。
 - **证据不足就说证据不足**：不用模型常识冒充材料事实，不把生成题伪装成真题。
-- **双轨学习**：平时偏掌握；距考试 30 天内逐步增加限时训练和补漏权重。
+- **双轨学习**：平时偏可持续掌握；距考试 30 天内逐步叠加限时训练和补漏权重，考后退出冲刺状态。
+- **费曼循环**：通俗讲解、定位缺口、回源修正、类比边界、简化重讲、迁移检验。
+- **可持续优先**：允许 5-10 分钟恢复会话，不以断签和满额队列惩罚学习者。
 - **独立产出**：通过回忆、解释、计算、证明、迁移任务更新掌握度，而不是阅读时长。
 - **持久可恢复**：计划用 Markdown，状态用 JSON/JSONL，跨会话继续学习。
 - **零运行依赖**：核心脚本只使用 Node 标准库，不使用 npm、在线服务或遥测。
@@ -60,10 +63,11 @@ codex plugin marketplace remove learning-mastery
 
 1. `$learning-mastery` 初始化独立学习工作区并判断当前模式。
 2. `$learning-material-to-course` 登记原始材料、记录哈希和定位信息、建立概念图。
-3. `$learning-tutor` 从检索和诊断开始，使用渐隐提示和迁移任务。
-4. `$learning-review-coach` 按到期时间和遗忘风险安排复习。
-5. `$learning-exam-coach` 生成仿真试卷、评分并形成补漏任务。
-6. `$learning-mastery` 更新掌握度、考试就绪度和下一行动。
+3. `$learning-tutor` 从检索和诊断开始，使用渐隐提示、完整费曼循环和迁移任务。
+4. `$learning-momentum` 调整节奏、处理低动力，并在中断后帮助低成本重启。
+5. `$learning-review-coach` 按 `必须/建议/可选` 分级安排复习。
+6. `$learning-exam-coach` 生成仿真试卷、评分并形成补漏任务。
+7. `$learning-mastery` 更新能力叙述、下一行动、掌握度和考试就绪度。
 
 示例工作区见 [examples/learning-workspace-template](examples/learning-workspace-template)。
 
@@ -95,4 +99,3 @@ node scripts/workspace.mjs validate examples/learning-workspace-template
 ## License
 
 原创代码与文档采用 [MIT License](LICENSE)。外部项目保留各自许可证，本项目只链接和评估，除非明确注明，不复制其内容。
-

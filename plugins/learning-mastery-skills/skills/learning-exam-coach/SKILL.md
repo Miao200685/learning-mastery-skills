@@ -46,6 +46,6 @@ For every critical error, create a remediation item tied to a concept and source
 - Do not infer exam rules, mark allocations, or past-paper status.
 - When the source cannot support an item, either label it `model_generated` or say `证据不足`.
 - Keep answer keys and learner responses separate. Do not leak the key into the exam prompt.
-- Update exam readiness with coverage, mastery, timed mock performance, consistency, and unresolved critical errors.
+- Update exam readiness with coverage, mastery, timed mock performance, consistency, and unresolved critical errors. Treat high-intensity exam mode as temporary; after the exam, reduce scoring pressure and route back to `$learning-momentum`.
 
 Read [references/exam-policy.md](references/exam-policy.md) before constructing a high-stakes simulation.

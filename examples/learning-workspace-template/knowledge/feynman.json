@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "concepts": {
+    "eigenvector-definition": {
+      "concept_id": "eigenvector-definition",
+      "cycles": [
+        {
+          "id": "cycle-1790062087767-8o8rg3",
+          "status": "complete",
+          "started_at": "2026-09-22T07:28:07.767Z",
+          "completed_at": "2026-09-22T07:28:08.207Z",
+          "stages": {
+            "explain": {
+              "text": "矩阵作用到某个非零向量后，方向不变，只被拉长或反向；那个方向就是特征方向。",
+              "confidence": 3,
+              "source": null,
+              "boundary": null,
+              "recorded_at": "2026-09-22"
+            },
+            "gap": {
+              "text": "我能说方向不变，但一开始说不清为什么允许负号或缩短后仍叫同一方向。",
+              "confidence": 2,
+              "source": null,
+              "boundary": null,
+              "recorded_at": "2026-09-22"
+            },
+            "source_check": {
+              "text": "来源定义要求 Av=lambda v，因此向量不能在零向量上，lambda 可以为负，拉伸、缩短或反向都属于同一方向直线。",
+              "confidence": null,
+              "source": "src-0cb39e4f97ad:section:特征值与特征向量",
+              "boundary": null,
+              "recorded_at": "2026-09-22"
+            },
+            "analogy": {
+              "text": "像把一根箭头压在同一条导轨上，矩阵只改变长度或朝向，而不把它推离导轨。",
+              "confidence": null,
+              "source": null,
+              "boundary": "类比不适用于零向量，也不能说明所有矩阵都一定存在实数特征向量。",
+              "recorded_at": "2026-09-22"
+            },
+            "simplify": {
+              "text": "找特征向量，就是找一类经矩阵作用后仍留在原直线上的非零箭头；特征值记录它被拉长、缩短或反向的倍数。",
+              "confidence": null,
+              "source": null,
+              "boundary": null,
+              "recorded_at": "2026-09-22"
+            },
+            "transfer": {
+              "text": "给定矩阵和候选向量，先算 Av，再看结果是否为原向量的倍数；若是且原向量非零，就找到了一个特征向量。",
+              "confidence": null,
+              "source": null,
+              "boundary": null,
+              "recorded_at": "2026-09-22"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

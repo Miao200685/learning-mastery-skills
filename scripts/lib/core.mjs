@@ -343,6 +343,9 @@ export async function collectWorkspaceStatus(workspace, options = {}) {
   const questions = await readJsonl(path.join(root, 'practice', 'questions.jsonl'));
   const attempts = await readJsonl(path.join(root, 'practice', 'attempts.jsonl'));
   const mistakes = await readJsonl(path.join(root, 'practice', 'mistakes.jsonl'));
+  const feynman = (await pathExists(path.join(root, 'knowledge', 'feynman.json')))
+    ? await readJson(path.join(root, 'knowledge', 'feynman.json'))
+    : { schema_version: SCHEMA_VERSION, concepts: {} };
 
   const dueItems = Object.values(schedule.items || {})
     .filter((item) => item.due && item.due <= today)
@@ -379,9 +382,12 @@ export async function collectWorkspaceStatus(workspace, options = {}) {
       scheduled_reviews: Object.keys(schedule.items || {}).length,
       due_reviews: dueItems.length,
       overdue_reviews: overdueItems.length,
+      feynman_cycles: Object.values(feynman.concepts || {}).reduce((sum, item) => sum + (item.cycles?.length || 0), 0),
+      feynman_complete: Object.values(feynman.concepts || {}).reduce((sum, item) => sum + (item.cycles || []).filter((cycle) => cycle.status === 'complete').length, 0),
     },
     average_mastery: round(averageMastery, 1),
     exam_readiness: readiness,
+    feynman,
     due_items: dueItems,
   };
 }
@@ -441,12 +447,16 @@ export async function validateWorkspace(workspace) {
   let concepts;
   let questions;
   let schedule;
+  let feynman;
   try {
     project = await readJson(path.join(root, 'project.json'));
     sources = await readJson(path.join(root, 'sources', 'index.json'));
     concepts = await readJson(path.join(root, 'knowledge', 'concepts.json'));
     questions = await readJsonl(path.join(root, 'practice', 'questions.jsonl'));
     schedule = await readJson(path.join(root, 'reviews', 'schedule.json'));
+    feynman = (await pathExists(path.join(root, 'knowledge', 'feynman.json')))
+      ? await readJson(path.join(root, 'knowledge', 'feynman.json'))
+      : { schema_version: SCHEMA_VERSION, concepts: {} };
   } catch (error) {
     return { ok: false, workspace: root, errors: [error.message], warnings };
   }
@@ -525,6 +535,24 @@ export async function validateWorkspace(workspace) {
     if (item.due && !isValidDateOnly(item.due)) errors.push(`复习项 ${conceptId} 的 due 无效。`);
   }
 
+  const feynmanStages = new Set(['explain', 'gap', 'source_check', 'analogy', 'simplify', 'transfer']);
+  for (const [conceptId, concept] of Object.entries(feynman.concepts || {})) {
+    if (!conceptIds.has(conceptId)) errors.push(`费曼记录引用了不存在的概念：${conceptId}`);
+    const cycleIds = new Set();
+    for (const cycle of concept.cycles || []) {
+      if (!cycle.id) errors.push(`概念 ${conceptId} 的费曼循环缺少 id。`);
+      else if (cycleIds.has(cycle.id)) errors.push(`概念 ${conceptId} 的费曼循环 id 重复：${cycle.id}`);
+      else cycleIds.add(cycle.id);
+      for (const [stage, record] of Object.entries(cycle.stages || {})) {
+        if (!feynmanStages.has(stage)) errors.push(`概念 ${conceptId} 的费曼阶段无效：${stage}`);
+        if (!record?.text) errors.push(`概念 ${conceptId} 的费曼阶段 ${stage} 缺少文本。`);
+      }
+      if (cycle.status === 'complete' && ![...feynmanStages].every((stage) => cycle.stages?.[stage])) {
+        errors.push(`概念 ${conceptId} 的费曼循环标记完成但阶段不完整。`);
+      }
+    }
+  }
+
   return {
     ok: errors.length === 0,
     workspace: root,
@@ -535,6 +563,7 @@ export async function validateWorkspace(workspace) {
       concepts: conceptIds.size,
       questions: questionIds.size,
       scheduled_reviews: Object.keys(schedule.items || {}).length,
+      feynman_cycles: Object.values(feynman.concepts || {}).reduce((sum, item) => sum + (item.cycles?.length || 0), 0),
     },
   };
 }
@@ -567,25 +596,38 @@ function findConceptCycles(conceptMap) {
 export async function writeDashboard(workspace, status) {
   const root = path.resolve(workspace);
   const weights = status.mode;
-  const dashboard = `# 学习仪表盘\n\n> 自动生成于 ${new Date().toISOString()}；可重新运行 \`workspace.mjs status --write-dashboard\` 更新。\n\n` +
-    `## 当前状态\n\n` +
+  const masteryEvidence = Object.entries(status.feynman?.concepts || {})
+    .flatMap(([conceptId, concept]) => (concept.cycles || []).map((cycle) => ({ conceptId, cycle })));
+  const completedFeynman = masteryEvidence.filter((item) => item.cycle.status === 'complete');
+  const abilities = completedFeynman.length
+    ? completedFeynman.map((item) => `- 能完成“${item.conceptId}”的通俗讲解、回源修正和迁移检验`).join('\n')
+    : '- 还没有完成的费曼循环；先通过一次通俗讲解和迁移任务建立第一项能力证据';
+  const nextActions = [];
+  if (status.counts.overdue_reviews > 0) nextActions.push(`先处理 ${status.counts.overdue_reviews} 个逾期项，只选最高风险的一个开始`);
+  if (status.counts.due_reviews > 0) nextActions.push(`今天有 ${status.counts.due_reviews} 个到期复习，按“必须 / 建议 / 可选”分级`);
+  if (status.counts.concepts === 0) nextActions.push('导入材料并建立第一组原子概念');
+  if (nextActions.length === 0) nextActions.push('选择一个概念运行完整费曼循环，或用 10 分钟恢复模式继续');
+  const dashboard = `# 学习仪表盘\n\n> 自动生成于 ${new Date().toISOString()}；优先看“现在能做什么”，分数只是诊断工具。\n\n` +
+    `## 现在能做什么\n\n${abilities}\n\n` +
+    `## 下一步\n\n${nextActions.map((item) => `- ${item}`).join('\n')}\n\n` +
+    `## 本周节奏\n\n` +
     `- 项目：${status.project.name}\n` +
-    `- 学科：${status.project.subject}\n` +
     `- 模式：${weights.mode}（掌握 ${weights.mastery}% / 考试 ${weights.exam}%）\n` +
     `- 考试日期：${status.project.exam_date || '未设置'}\n` +
-    `- 目标分数：${status.project.target_score}\n` +
-    `- 来源：${status.counts.sources}\n` +
-    `- 概念：${status.counts.concepts}\n` +
+    `- 来源 ${status.counts.sources}；概念 ${status.counts.concepts}；费曼循环 ${status.counts.feynman_cycles || 0}\n` +
+    `- 到期复习：${status.counts.due_reviews}；逾期：${status.counts.overdue_reviews}\n\n` +
+    `## 可选探索\n\n` +
+    `- 选择一个真实应用、反例或“如果……会怎样”的问题，不要求计分。\n` +
+    `- 如果今天状态一般，使用 5-10 分钟 comeback 模式，只完成一次回忆和下一次行动。\n\n` +
+    `<details>\n<summary>诊断分数与考试就绪度</summary>\n\n` +
     `- 平均掌握：${status.average_mastery}/100\n` +
-    `- 考试就绪度：${status.exam_readiness.score}/100（区间 ${status.exam_readiness.range[0]}–${status.exam_readiness.range[1]}）\n` +
-    `- 到期复习：${status.counts.due_reviews}\n` +
-    `- 逾期复习：${status.counts.overdue_reviews}\n\n` +
-    `## 考试就绪度组成\n\n` +
+    `- 考试就绪度：${status.exam_readiness.score}/100（区间 ${status.exam_readiness.range[0]}-${status.exam_readiness.range[1]}）\n` +
     `- 材料覆盖：${status.exam_readiness.components.coverage}\n` +
     `- 概念掌握：${status.exam_readiness.components.mastery}\n` +
     `- 限时模拟：${status.exam_readiness.components.mock_exam}\n` +
     `- 稳定性：${status.exam_readiness.components.consistency}\n` +
     `- 关键错误扣分：${status.exam_readiness.components.critical_error_penalty}\n\n` +
+    `</details>\n\n` +
     `## 到期项目\n\n` +
     (status.due_items.length
       ? status.due_items.map((item) => `- ${item.concept_id}（应复习：${item.due}）`).join('\n')
@@ -593,7 +635,6 @@ export async function writeDashboard(workspace, status) {
   await writeTextAtomic(path.join(root, 'progress', 'dashboard.md'), dashboard);
   return dashboard;
 }
-
 export function round(value, digits = 0) {
   const factor = 10 ** digits;
   return Math.round((Number(value) + Number.EPSILON) * factor) / factor;
